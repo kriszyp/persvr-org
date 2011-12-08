@@ -1,0 +1,1 @@
+Persevere is available under either the terms of the modified BSD license or the Academic Free License version 2.1 (see below).

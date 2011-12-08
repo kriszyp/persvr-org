@@ -1,0 +1,78 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	<title>Persevere - The Dojo Foundation</title>
+	<meta name="author" content="Dojo Foundation"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{{path}}</title>
+	<link rel="stylesheet" href="../ddoc/css/ddoc.css" media="screen">
+	<link rel="stylesheet" href="../persevere/css/layout.css" media="screen">
+	<script src="http://downloads.dojotoolkit.org/release-1.7.0/dojo-release-1.7.0/dojo/dojo.js"
+			data-dojo-config="async: true">
+	</script>
+	<script>
+	if({{projectDocs}}){
+		require({
+			paths: {
+				ddoc:'/ddoc',
+				'put-selector':'/put-selector',
+				'xstyle':'/xstyle',
+				dgrid:'/dgrid'
+			}
+		},["ddoc/ddoc"]);
+	}else{
+		require(['dojo/domReady!'], function(){
+			document.getElementById("toc").style.display= 'none';
+		});
+	}
+	</script>
+  </head>
+  
+<body>
+<div id="bg-light">
+<div id="wrapper">
+	<div id="header">
+	<a id="logo" href="/"></a>
+	<div class="menu">
+		<ul> 
+			
+					<li><a class="home" href="/">Home</a></li> 
+					
+					<li class="page_item page-item-2"><a href="License" title="License">License</a> </li> 
+<li class="page_item page-item-26"><a href="Installation" title="Installation">Installation</a></li> 
+<li class="page_item page-item-46"><a href="Tutorials" title="Tutorials">Tutorials</a></li> 
+<li class="page_item page-item-5"><a href="Documentation" title="Documentation">Documentation</a> </li> 
+<li class="page_item page-item-40"><a href="Demos" title="Demos">Demos</a> </li> 
+<li class="page_item page-item-38"><a href="http://www.sitepen.com/blog/category/persevere/" title="Blog">Blog</a></li> 
+ 
+				</ul>
+	</div><!-- end of menu -->
+</div><!-- end of header -->	
+	<div class="shadow-sep"></div><!-- end of shadow-sep -->
+	<div id="main-content">
+		<div id="toc"></div>
+		<h1>{{path}}</h1>
+        <div id="content" class="site">
+{{content}}
+        </div><!-- end of content -->
+	
+	
+	
+</div><!-- end of main-content -->
+<div class="clear"></div>
+</div><!-- end of wrapper -->
+<div id="footer">
+	<div class="footer-content">
+		<div class="footer-left">
+				<span class="redundant">&copy;</span> <a href="http://dojofoundation.org">The Dojo Foundation</a>, All Rights Reserved.
+				&nbsp;&nbsp;&nbsp;<a href="http://dojotoolkit.org/license">License Information</a>
+		</div><!-- end of footer-left -->
+		
+		<div class="footer-right">
+			<span>Internet Application Management provided by <a href="http://www.reliam.com/">Reliam, Inc.</a></span>
+		</div><!-- end of footer-right -->
+	</div><!-- end of footer-content -->
+</div><!-- end of footer -->
+</body>
+</html>
