@@ -3,7 +3,7 @@ var Static = require("pintura/jsgi/static").Static,
 	fs = require("fs"),
 	template = fs.readFileSync("template.html", "utf8"),
 	staticHandler = Static({urls:[""], root: "../", directoryListing: true}),
-	showdown = new (require("showdown").Showdown.converter)();
+	Showdown = require("showdown").Showdown.converter;
 
 require("jsgi-node").start(function(request){
 	var path = request.pathInfo;
@@ -35,6 +35,7 @@ require("jsgi-node").start(function(request){
 			body: ["Not found"]
 		};
 	}
+	var showdown = new Showdown();
 	vars.content = showdown.makeHtml(content);
 	vars.projectDocs = path.length > 1 && path[path.length - 1] == '/';
 	vars.path = decodeURIComponent(path).replace(/\//g, ' ');
