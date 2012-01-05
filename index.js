@@ -10,13 +10,23 @@ require("jsgi-node").start(function(request){
 	if(path.indexOf('.') > 0){
 		return staticHandler(request);
 	}
+	if(path.substring(0,6) == '/Page/'){
+		// the old URL structure
+		return {
+			status: 302,
+			headers: {
+				Location: path.substring(5)
+			},
+			body: []
+		}
+	}
 	var vars = {};
 	try{
 		var content = fs.readFileSync(
 			path == '/' ? "pages/index.md" :
 				path[path.length - 1] == '/' ? 
 					'..' + path + "/README.md":
-					'pages' + path + '.md', "utf8");
+					'pages' + decodeURIComponent(path) + '.md', "utf8");
 	
 	}catch(e){
 		return {
@@ -27,7 +37,7 @@ require("jsgi-node").start(function(request){
 	}
 	vars.content = showdown.makeHtml(content);
 	vars.projectDocs = path.length > 1 && path[path.length - 1] == '/';
-	vars.path = path.replace(/\//g, ' ');
+	vars.path = decodeURIComponent(path).replace(/\//g, ' ');
 	var body = template.replace(/\{\{([^}]+)\}\}/g, function(t, name){
 			return vars[name];
 		});
