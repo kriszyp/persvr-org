@@ -1,0 +1,5 @@
+<p>JSON Schema-based validation, REST-style handlers, extensible URL-based and chainable querying, facet-based object capability model security<!--more--> provide a comprehensive set of tools for building flexible robust data models. Persevere's <a href="http://github.com/kriszyp/perstore">Perstore</a> persistence framework is based on the W3C Indexed Database API for a pluggable data store architectures (MongoDB, CouchDB, JSON files, in-memory, SQL).</p>
+
+<p>The <a href="http://www.sitepen.com/blog/2010/01/25/getting-started-with-pintura/">Introduction to Pintura</a> demonstrates some of the simple data models of Perstore, and <a href="http://www.sitepen.com/blog/2010/03/08/object-capability-model-and-facets-in-perstorepintura/">this article on Perstore's object capability model and facets</a> shows how to build secure data models with flexible access control and alternate views of data.</p>
+
+<p>After getting started you can see the <a href="perstore/">full reference documentation can be found on the project site</a>.</p>

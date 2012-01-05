@@ -1,0 +1,3 @@
+Standards based, resource oriented, content negotiation for JSON, JS, HTML, and more, async middleware-based cross-site support, authentication, CSRF protection, and transaction management make up Persevere's Pintura framework.
+
+Pintura meticulously follows the HTTP specification to ensure standards-based client-server interoperability and maximum opportunity for component and web service reuse. Persevere is asynchronously based, so it is highly efficient and well-suited for comet-style applications
