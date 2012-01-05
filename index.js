@@ -48,4 +48,4 @@ require("jsgi-node").start(function(request){
 			"content-length": body.length 
 		}
 	}
-});
+}, {port: require("perstore/util/settings").port});
