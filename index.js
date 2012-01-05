@@ -45,6 +45,7 @@ require("jsgi-node").start(function(request){
 		status: 200,
 		body: body,
 		headers: {
+			"content-type": "text/html",
 			"content-length": body.length 
 		}
 	}
