@@ -1,8 +1,11 @@
 <p>If you are using NodeJS, you can install Persevere with NPM. Simply add Persevere packages as dependencies to your application's package.json and run <code>npm install</code>. To install the example wiki, you can simply install the example wiki package:
-</p><pre>npm install persevere-example-wiki
+</p><pre>
+mkdir node_modules
+cd node_modules
+npm install persevere-example-wiki
 </pre>
 And then to start it:
-<pre>cd node_modules/persevere-example-wiki
+<pre>cd persevere-example-wiki
 node index.js
 </pre>
 <p></p>

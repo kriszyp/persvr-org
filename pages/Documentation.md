@@ -8,11 +8,12 @@ data models, and exposing these to your client side user interface with a minimu
 See the <a href="Installation">installation page</a> for installation instructions. 
 
 The basic usage of Persevere is to create a data model with a Perstore data model and 
-expose it through the Pintura web stack. For example:
+expose it through the Pintura web stack. For example, we could write an app:
 
     var Model = require("perstore/model").Model,
-    	// create a store using MongoDB
-    	store = require("perstore/mongodb").MongoDB("Product");
+    	DefaultStore = require("perstore/stores").DefaultStore
+    	// create a store
+    	store = new DefaultStore();
    	// create the data model
     Product = Model(store, {
         properties: {
@@ -26,6 +27,8 @@ expose it through the Pintura web stack. For example:
 		};
 	};
 
+Using the example wiki as a template, we could edit the app.js with the code above.
+Then we could start the application (running node index.js).
 And then we could access the data in our database using standard HTTP methods:
 
 * GET /{model}/{id} - Gets the object with the given id from the model store.
@@ -33,8 +36,14 @@ And then we could access the data in our database using standard HTTP methods:
 * DELETE /{model}/{id} - Deletes the object with the given id from the model store.
 * POST /{model}/ - Creates or incrementally updates an object in model store. 
 
-This is a very simple condensed example of using Persevere. To learn more, you can take
-a look at each of the packages that make up Persevere:
+We could then go on to add logic to our data models or switch to a different backend
+database (like MongoDB) in our app.js. See the Perstore documentation for more on
+building data models. We could also add to or edit the web stack in the index.js using Pintura.
+
+This is a very simple condensed example of using Persevere. To get started, you may
+want to look <a href="Tutorials">the tutorials</a>. To learn more about the specific
+APIs and modules that are available, you can take a look at each of the packages that 
+make up Persevere:
 
 ## <a href="pintura/">Pintura</a>
 The external interface of Persevere that provides the gateway to the web is <a href="pintura/">Pintura</a>.
@@ -46,10 +55,10 @@ your data model through JSON and other media types with an out-of-the-box setup
 that can easily be customized for specific needs. 
 
 ## <a href="perstore/">Perstore</a>
-<a href="rql/">Perstore</a> provides a the data persistence and modeling layer of Persevere. Perstore
+<a href="perstore/">Perstore</a> provides a the data persistence and modeling layer of Persevere. Perstore
 provides several data stores that allow it connect with different backends like
 SQL DBs, MongoDB, CouchDB, in-memory, and others. Perstore then provides the 
-facilities for layering data models on top of these stores that enfore data integrity
+facilities for layering data models on top of these stores that enforce data integrity
 constraints and adds model logic.
 
 ## <a href="rql/">RQL</a>
