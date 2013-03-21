@@ -41,7 +41,7 @@ database (like MongoDB) in our app.js. See the Perstore documentation for more o
 building data models. We could also add to or edit the web stack in the index.js using Pintura.
 
 This is a very simple condensed example of using Persevere. To get started, you may
-want to look <a href="Tutorials">the tutorials</a>. To learn more about the specific
+want to look at <a href="Tutorials">the tutorials</a>. To learn more about the specific
 APIs and modules that are available, you can take a look at each of the packages that 
 make up Persevere:
 
